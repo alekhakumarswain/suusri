@@ -1,0 +1,58 @@
+.main {
+  background: rgb(9, 8, 32);
+  background: linear-gradient(90deg, rgba(9, 8, 32, 1) 0%, rgba(53, 51, 205, 1) 35%, rgba(71, 70, 92, 1) 100%);
+  padding: 0px 0;
+  color: antiquewhite;
+}
+
+.custom-container {
+  padding: 5px;
+  padding-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-image {
+  max-width: 300px; 
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.header{
+  font-family: 'Playfair Display', serif; 
+  font-size: calc(2em+10px); 
+  color: #fff; 
+  line-height: 1.2;
+}
+.suuSriText {
+  font-family: 'Roboto Condensed', sans-serif; /* Ensure this font is loaded */
+  color: #ff69b4; /* Adjust color as needed */
+  background: -webkit-linear-gradient(45deg,#dbe5f2, #3a8dff, #ae52d4, #ff4b4b,#aeba8a,#dbe5f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+
+}
+
+/* Flexbox for centering content */
+.main .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Ensure columns stack vertically on smaller screens */
+@media (max-width: 767.98px) {
+  .main .row {
+    flex-direction: column;
+  }
+
+  .main .col-md-6 {
+    margin-bottom: 20px;
+  }
+
+  .custom-image {
+    margin-bottom: 20px; /* Add spacing between image and text on mobile */
+  }
+}
