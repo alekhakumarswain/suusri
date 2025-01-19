@@ -1,19 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Make sure you're using Routes instead of Switch in React Router v6
-import Welcome from './components/Welcome'; 
-import './App.css'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './components/Main';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Chat from './components/Main/Chat';
+import Welcome from './components/Welcome';
+import './App.css';
 
 const App = () => {
-  
-
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Welcome />} /> {/* Home Page */}
-          <Route path="/chat" element={<Main />} /> {/* Chat Page */}
+          <Route path="/" element={<Welcome />} />
+          <Route path="/main" element={<Main />} />
+          <Route path="/chat" element={<Chat />} />
         </Routes>
       </div>
     </Router>

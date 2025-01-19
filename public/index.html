@@ -2,43 +2,91 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/suu-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SuuSri: Your AI Assistant, smarter than your autocorrect. Multi-lingual, offline-ready, and built to help you!" />
+    <meta name="keywords" content="AI Assistant, React, PWA, Multi-language, Firebase, Smart Assistant, Digital Help, SuuSri" />
+    <meta name="author" content="SuuSri Team" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
+    <!-- PWA related meta -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/suu-icon.png" />
+    
+    <!-- Social Sharing (OG) Tags -->
+    <meta property="og:title" content="SuuSri | Your Smart Assistant" />
+    <meta property="og:description" content="Chat, learn, and laugh with SuuSri – your trusted AI assistant." />
+    <meta property="og:image" content="%PUBLIC_URL%/suu-icon.png" />
+    <meta property="og:url" content="https://suusri.web.app" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SuuSri | Your Smart Assistant" />
+    <meta name="twitter:description" content="Chat, learn, and laugh with SuuSri – your trusted AI assistant." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/suu-icon.png" />
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>SuuSri - Your AI Assistant</title>
+
+    <!-- Open Graph, Twitter meta tags, and Custom Favicon -->
+    <link rel="icon" href="%PUBLIC_URL%/suu-icon.png" />
+    <!-- Funny Documentation for Inspectors -->
+    <!-- 
+      🕵️‍♂️ Welcome to the SuuSri Lair! 🐰✨
+      🍕 Pro tip: SuuSri can also order pizza in 9 languages (if you ask nicely). 🍕
+      🛠️ Built by a bunch of caffeinated devs who work after hours... 👀
+      🎉 Like debugging? SuuSri loves to make code work, no matter how messy it is.
+      🚀 Offline, multi-lingual, secure, and ready to make your day! 🌎
     -->
-    <title>SuuSri your AI Asssistant</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>You need to enable JavaScript to run this app. 🚫✨</noscript>
     <div id="root"></div>
+    
+    <!-- Further funny and security comments -->
     <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+      🤖 Did you know that SuuSri is powered by 98% logic and 2% luck?
+      🕵️‍♀️ SECRET ALERT: Try inspecting the code for more secrets – you'll laugh, cry, or question your sanity.
+      💬 SuuSri might be faster at answering questions than Google... Okay, maybe just *almost* faster.
+      🎉 Security? No worries! SuuSri guards your data like a highly caffeinated bodyguard! 🔒💪
+      🎮 If this app isn't as fast as you'd like... SuuSri blames it on the Wi-Fi. 🤷‍♀️
     -->
+
+    <script>
+      const styles = [
+        'color: white',
+        'background-color: #007bff',
+        'padding: 4px 8px',
+        'border-radius: 4px',
+        'font-size: 14px',
+        'font-weight: bold',
+      ].join(';');
+    
+      console.log('%cHello, Inspector! 👋', styles);
+      console.log('%cSuuSri is smarter than you think! 🤖', 'color: #ff4500; font-size: 12px;');
+      console.log('%c💡 Fun Tip:', 'color: #ffa500; font-size: 12px;', 'Have you tried building your own assistant yet?');
+      console.log('%c🐰 Easter eggs? Maybe. 🕵️‍♂️', 'color: #6a5acd; font-style: italic;');
+      console.log('%c👉 Go build something amazing, just like SuuSri!', 'color: #2e8b57; font-size: 12px; font-weight: bold;');
+
+      // Right-click custom behavior
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault(); // Prevent the default right-click behavior
+        alert('Oops! No right-clicking allowed here. 🕵️‍♂️✨'); // Custom alert
+        console.log('%cHey! Right-click is disabled here. 👀', 'color: red; font-size: 14px; font-weight: bold;');
+      });
+
+      // Console Log to debug or log funny comments
+      console.log('%c🚨 WARNING: Debugging is addictive. Proceed with caution!', 'color: blue; font-size: 14px; font-weight: bold;');
+      
+      // Auto-refresh when no changes detected (because the universe might have to reload it! 🔄)
+      setInterval(() => {
+        console.log('%c🚀 Still running, no need to panic, SuuSri is invincible! 🦾', 'color: purple; font-size: 14px; font-weight: bold;');
+      }, 500000); // Check every 5 seconds
+
+    </script>
   </body>
 </html>

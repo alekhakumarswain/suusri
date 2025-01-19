@@ -4,7 +4,6 @@ import './Main.css'; // Create a custom CSS file for additional styling
 import icon from '../Assets/img/suu2.png'; // Adjust this path based on where the image is located
 import icon1 from '../Assets/img/suu1.png'; // Adjust this path based on where the image is located
 import icon2 from '../Assets/img/suu3.png'; // Adjust this path based on where the image is located
-
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Import FontAwesome CSS
 
 import { useNavigate } from 'react-router-dom';
