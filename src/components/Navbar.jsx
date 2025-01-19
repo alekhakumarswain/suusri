@@ -6,7 +6,7 @@ import './Main.css';
 export default function Navbar() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <nav className="navbar navbar-expand-lg sticky-top">
                 <div className="container">
                     <a className="navbar-brand" href="/"><b>SuuSri</b></a>
                 </div>

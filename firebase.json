@@ -1,11 +1,17 @@
 {
   "hosting": {
     "public": "build",
-    "hosting":"suusri",
+    "site": "suusri",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }

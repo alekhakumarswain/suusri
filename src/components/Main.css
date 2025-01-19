@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap'); /* Replace with 'Galadiola' if available */
+
 .main {
   background: rgb(9, 8, 32);
   background: linear-gradient(90deg, rgba(9, 8, 32, 1) 0%, rgba(53, 51, 205, 1) 35%, rgba(71, 70, 92, 1) 100%);
@@ -12,34 +14,45 @@
 }
 
 .custom-image {
-  max-width: 300px; 
+  position: relative;
+  max-width: 300px;
   width: 100%;
   height: auto;
   border-radius: 8px;
+  filter: drop-shadow(0 0 0.55rem crimson);
+  transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.header{
-  font-family: 'Playfair Display', serif; 
-  font-size: calc(2em+10px); 
-  color: #fff; 
-  line-height: 1.2;
+.custom-image:hover {
+  filter: drop-shadow(0 0 1rem cyan);
+  transform: scale(1.35); /* Optional: Add a subtle zoom effect */
 }
+
+
+.header {
+  font-family: 'Playfair Display', serif;
+  background-color: transparent !important;
+  font-size: calc(3.5em + 1vw); /* Dynamic uniform font size */
+  color: #fff;
+  text-align: center; /* Horizontally center text */
+  margin-bottom: 20px; /* Add spacing between elements */
+}
+
 .suuSriText {
-  font-family: 'Roboto Condensed', sans-serif; /* Ensure this font is loaded */
-  color: #ff69b4; /* Adjust color as needed */
-  background: -webkit-linear-gradient(45deg,#dbe5f2, #3a8dff, #ae52d4, #ff4b4b,#aeba8a,#dbe5f2);
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #ff69b4;
+  background: -webkit-linear-gradient(45deg, #dbe5f2, #3a8dff, #ae52d4, #ff4b4b, #aeba8a, #dbe5f2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
-
 }
 
 /* Flexbox for centering content */
 .main .row {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-direction: row; /* Stack elements vertically */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
 }
 
 /* Ensure columns stack vertically on smaller screens */
@@ -57,8 +70,7 @@
   }
 }
 
-.button-64 {
-  margin-left: 80%;
+.button-64, .button-69 {
   align-items: center;
   background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
   border: 0;
@@ -68,7 +80,7 @@
   color: #FFFFFF;
   display: flex;
   font-family: Phantomsans, sans-serif;
-  font-size: 18px;
+  font-size: calc(1em + 1.5vw); /* Dynamic font size */
   justify-content: center;
   line-height: 1em;
   min-width: 140px;
@@ -80,53 +92,19 @@
   white-space: nowrap;
   cursor: pointer;
 }
-.button-64 .text{
+
+.button-64 .text, .button-69 .text {
   padding-left: 10px;
 }
 
-.button-69 {
-  margin-left: 33%;
-  align-items: center;
-  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
-  border: 0;
-  border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  display: flex;
-  font-family: Phantomsans, sans-serif;
-  font-size: 18px;
-  justify-content: center;
-  line-height: 1em;
-  min-width: 140px;
-  padding: 3px;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
 .button-64:active,
-.button-64:hover {
-  outline: 0;
-}
-
+.button-64:hover,
 .button-69:active,
 .button-69:hover {
   outline: 0;
 }
 
-.button-64 span{
-  background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-  transition: 300ms;
-}
-
+.button-64 span,
 .button-69 span {
   background-color: rgb(5, 6, 45);
   padding: 16px 24px;
@@ -136,24 +114,32 @@
   transition: 300ms;
 }
 
-.button-64:hover span {
-  background: none;
-}
-
-@media (min-width: 768px) {
-  .button-64 {
-    font-size: 24px;
-    min-width: 196px;
-  }
-}
-
+.button-64:hover span,
 .button-69:hover span {
   background: none;
 }
 
 @media (min-width: 768px) {
-  .button-69 {
-    font-size: 20px;
+  .button-64, .button-69 {
+    font-size: 1.2rem; /* Larger size on bigger screens */
     min-width: 196px;
   }
+}
+ .navbar{
+  background-color: rgba(10,0,0,0.3) !important;
+ }
+.navbar-brand b{
+  font-family: 'Galada', cursive; /* Replace this with 'Galadiola' if available */
+  font-size: calc(1.2em + 10px); /* Dynamic font sizing */
+  color: #ff99ff;
+  text-shadow: 
+    /* Inner Glow */
+    0 0 15px #0c63d4, 
+    0 0 10px #1362da, 
+    /* Outer Glow - Border Effect */
+    0 0 15px #ff33cc, 
+    0 0 10px #ff33cc, 
+    0 0 15px #ff1aff, 
+    0 0 10px #ff1aff, 
+    0 0 10px #ff1aff;
 }
