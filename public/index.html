@@ -5,31 +5,69 @@
     <link rel="icon" href="%PUBLIC_URL%/suu-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <link rel="sitemap" type="application/xml" href="https://suusri.web.app/sitemap.xml" />
+    <link rel="canonical" href="https://suusri.web.app" />
     
     <!-- SEO Meta Tags -->
+
     <meta name="description" content="SuuSri: Your AI Assistant, smarter than your autocorrect. Multi-lingual, offline-ready, and built to help you!" />
+    <meta name="subject" content="AI Assistant" />
+    <meta name="url" content="https://suusri.web.app" />
+    <meta name="identifier-URL" content="https://suusri.web.app" />
+    <meta name="category" content="AI Assistant" />
+    <meta name="site_name" content="SuuSri" />
+    <meta name="rating" content="safe for kids" />
     <meta name="keywords" content="AI Assistant, React, PWA, Multi-language, Firebase, Smart Assistant, Digital Help, SuuSri" />
     <meta name="author" content="SuuSri Team" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="apple-mobile-web-app-title" content="SuuSri" />
+    <meta name="application-name" content="SuuSri" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/suu-icon.png" />
+    <meta name="theme-color" content="#000000" />
+    
+    
 
     <!-- PWA related meta -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/suu-icon.png" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/suu-icon.png" />
     
     <!-- Social Sharing (OG) Tags -->
     <meta property="og:title" content="SuuSri | Your Smart Assistant" />
     <meta property="og:description" content="Chat, learn, and laugh with SuuSri – your trusted AI assistant." />
     <meta property="og:image" content="%PUBLIC_URL%/suu-icon.png" />
     <meta property="og:url" content="https://suusri.web.app" />
+    <meta property="og:site_name" content="SuuSri" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="hi_IN" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SuuSri | Your Smart Assistant" />
     <meta name="twitter:description" content="Chat, learn, and laugh with SuuSri – your trusted AI assistant." />
     <meta name="twitter:image" content="%PUBLIC_URL%/suu-icon.png" />
+    <meta name="twitter:creator" content="@suusri" />
+    <meta name="twitter:site" content="@suusri" />
+    <meta name="twitter:domain" content="suusri.web.app" />
+
     
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/suu-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/suu-icon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/suu-icon.png" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/suu-icon.png" color="#5bbad5" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/suu-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="SuuSri" />
+    <meta name="application-name" content="SuuSri" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/suu-icon.png" />
+    
     <title>SuuSri - Your AI Assistant</title>
 
     <!-- Open Graph, Twitter meta tags, and Custom Favicon -->
@@ -44,10 +82,8 @@
     -->
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app. 🚫✨</noscript>
     <div id="root"></div>
-    
-    <!-- Further funny and security comments -->
+      <!-- Further funny and security comments -->
     <!--
       🤖 Did you know that SuuSri is powered by 98% logic and 2% luck?
       🕵️‍♀️ SECRET ALERT: Try inspecting the code for more secrets – you'll laugh, cry, or question your sanity.
@@ -55,6 +91,10 @@
       🎉 Security? No worries! SuuSri guards your data like a highly caffeinated bodyguard! 🔒💪
       🎮 If this app isn't as fast as you'd like... SuuSri blames it on the Wi-Fi. 🤷‍♀️
     -->
+    <!-- Install Button -->
+    <button id="install-button" style="display: none; position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+      Install SuuSri
+    </button>
 
     <script>
       const styles = [
@@ -66,11 +106,13 @@
         'font-weight: bold',
       ].join(';');
     
-      console.log('%cHello, Inspector! 👋', styles);
+      console.log("%cHello, I'm SUUSRI Welcome to my World! 👋", styles);
       console.log('%cSuuSri is smarter than you think! 🤖', 'color: #ff4500; font-size: 12px;');
       console.log('%c💡 Fun Tip:', 'color: #ffa500; font-size: 12px;', 'Have you tried building your own assistant yet?');
       console.log('%c🐰 Easter eggs? Maybe. 🕵️‍♂️', 'color: #6a5acd; font-style: italic;');
-      console.log('%c👉 Go build something amazing, just like SuuSri!', 'color: #2e8b57; font-size: 12px; font-weight: bold;');
+      console.log('%c🚀 Powered by love, but mostly by code. 💻','color: #ff0000; font-size: 12px; font-weight: bold;');
+      console.log('%c🎮 If this app isn\'t as fast as you\'d like... SuuSri blames it on the Wi-Fi. 🤷‍♀️', 'color: #ff4500; font-size: 12px;');
+
 
       // Right-click custom behavior
       document.addEventListener('contextmenu', function(e) {
@@ -82,11 +124,57 @@
       // Console Log to debug or log funny comments
       console.log('%c🚨 WARNING: Debugging is addictive. Proceed with caution!', 'color: blue; font-size: 14px; font-weight: bold;');
       
+      
       // Auto-refresh when no changes detected (because the universe might have to reload it! 🔄)
       setInterval(() => {
         console.log('%c🚀 Still running, no need to panic, SuuSri is invincible! 🦾', 'color: purple; font-size: 14px; font-weight: bold;');
       }, 500000); // Check every 5 seconds
 
+      const originalWarn = console.warn;
+console.warn = function (...args) {
+  if (args[0] && args[0].includes("Banner not shown")) {
+    return;  // Ignore the warning related to 'beforeinstallprompt'
+  }
+  originalWarn.apply(console, args);  // For other warnings, use the default behavior
+};
+
+      document.addEventListener("DOMContentLoaded", () => {
+  let deferredPrompt;
+  const installButton = document.getElementById("install-button");
+
+  window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();  // Suppress the banner
+    deferredPrompt = event;  // Store the event to trigger it manually later
+
+    // Show the install button
+    installButton.style.display = "block";
+
+    // On button click, show the install prompt
+    installButton.addEventListener("click", () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();  // This triggers the PWA install prompt
+        
+        deferredPrompt.userChoice.finally(() => {
+          deferredPrompt = null;  // Reset deferredPrompt
+          installButton.style.display = "none";  // Hide the install button
+        });
+      }
+    });
+  });
+
+  // Handle successful installation
+  window.addEventListener("appinstalled", () => {
+    alert("SuuSri has been successfully installed! 🎉");
+  });
+});
+
+
+      // Register the Service Worker
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js");
+        });
+      }
     </script>
   </body>
 </html>

@@ -1,25 +1,30 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SuuSri",
+  "name": "SuuSri - Your Smart AI Assistant",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "suu-icon.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
+      "src": "suu-icon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "suu-icon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "orientation": "portrait-primary",
+  "description": "SuuSri: Your AI Assistant, smarter than autocorrect. Multi-lingual, offline-ready, and smarter every day.",
+  "categories": ["productivity", "utilities", "assistant", "AI"],
+  "lang": "en"
 }
