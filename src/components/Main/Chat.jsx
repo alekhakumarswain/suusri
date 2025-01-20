@@ -8,7 +8,7 @@ import Navbar from '../Navbar';
 const Chat = () => {
   const [userInput, setUserInput] = useState('');
   const [messages, setMessages] = useState([]);
-  const API_KEY = "AIzaSyBFrKMXHRJyDL7uMBzuZtmVctXFZMnZScA"; // Replace with your API Key
+  const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
   const genAI = new GoogleGenerativeAI(API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
