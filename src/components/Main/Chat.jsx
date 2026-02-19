@@ -64,7 +64,12 @@ const Chat = () => {
     setIsTyping(true);
 
     try {
-      const response = await fetch('https://suusrifchat.onrender.com/chat', {
+      // Use local backend URL for faster testing/debugging if running locally
+      const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://127.0.0.1:5000/chat'
+        : 'https://suusrifchat.onrender.com/chat';
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
