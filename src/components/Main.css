@@ -1,21 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap'); /* Replace with 'Galadiola' if available */
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+/* Replace with 'Galadiola' if available */
 
 .main {
-  background: rgb(9, 8, 32);
-  background: linear-gradient(90deg, rgba(9, 8, 32, 1) 0%, rgba(53, 51, 205, 1) 35%, rgba(71, 70, 92, 1) 100%);
-  padding: 0px 0;
+  background: #090820;
+  padding-top: 0;
+  /* Let navbar overlay */
   color: antiquewhite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background Blobs */
+.blob-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  filter: blur(80px);
+  border-radius: 50%;
+  opacity: 0.25;
+  animation: blobFloat 20s infinite alternate;
+}
+
+.blob-1 {
+  background: #AF40FF;
+  top: -10%;
+  left: -10%;
+  animation-duration: 15s;
+}
+
+.blob-2 {
+  background: #5B42F3;
+  bottom: -10%;
+  right: -10%;
+  animation-duration: 18s;
+  animation-delay: -2s;
+}
+
+.blob-3 {
+  background: #00DDEB;
+  top: 40%;
+  left: 30%;
+  width: 400px;
+  height: 400px;
+  animation-duration: 22s;
+  animation-delay: -5s;
+}
+
+@keyframes blobFloat {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+
+  33% {
+    transform: translate(50px, -80px) scale(1.1) rotate(120deg);
+  }
+
+  66% {
+    transform: translate(-30px, 40px) scale(0.9) rotate(240deg);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1) rotate(360deg);
+  }
 }
 
 .custom-container {
-  padding: 5px;
-  padding-bottom: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-section {
+  padding: 0px 0;
+  /* Add balanced breathing room */
+  position: relative;
+}
+
+/* Subtle glow for individual sections instead of a hard box */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(175, 64, 255, 0.08) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-section:nth-child(even)::after {
+  background: radial-gradient(circle, rgba(0, 221, 235, 0.08) 0%, transparent 70%);
+}
+
+.feature-section-wrapper {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  padding: 100px 0;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .custom-image {
+  display: block;
+  margin: 0 auto;
   position: relative;
-  max-width: 300px;
+  max-width: 200px;
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -25,17 +129,23 @@
 
 .custom-image:hover {
   filter: drop-shadow(0 0 1rem cyan);
-  transform: scale(1.35); /* Optional: Add a subtle zoom effect */
+  transform: scale(1.2);
+  /* Optional: Add a subtle zoom effect */
 }
 
 
 .header {
   font-family: 'Playfair Display', serif;
   background-color: transparent !important;
-  font-size: calc(3.5em + 1vw); /* Dynamic uniform font size */
+  font-size: clamp(2rem, 5vw, 4rem);
+  /* Better responsive font sizing */
   color: #fff;
-  text-align: center; /* Horizontally center text */
-  margin-bottom: 20px; /* Add spacing between elements */
+  text-align: center;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  position: relative;
 }
 
 .suuSriText {
@@ -43,16 +153,27 @@
   color: #ff69b4;
   background: -webkit-linear-gradient(45deg, #dbe5f2, #3a8dff, #ae52d4, #ff4b4b, #aeba8a, #dbe5f2);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+}
+
+.content-text {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Flexbox for centering content */
 .main .row {
   display: flex;
-  flex-direction: row; /* Stack elements vertically */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
+  flex-direction: row;
+  /* Stack elements vertically */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
 }
 
 /* Ensure columns stack vertically on smaller screens */
@@ -63,55 +184,95 @@
 
   .main .col-md-6 {
     margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 2.5rem;
+    padding: 0 10px;
   }
 
   .custom-image {
-    margin-bottom: 20px; /* Add spacing between image and text on mobile */
+    max-width: 200px;
+    margin-bottom: 20px;
+    /* Add spacing between image and text on mobile */
+  }
+
+  .custom-image:hover {
+    transform: scale(1.1);
+    /* Reduced scale on hover for mobile */
+  }
+
+  .button-69 {
+    font-size: 1.2rem;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
-.button-64, .button-69 {
+@media (max-width: 480px) {
+  .header {
+    font-size: 2rem;
+  }
+
+  .custom-image {
+    max-width: 150px;
+  }
+}
+
+.button-64,
+.button-69 {
   align-items: center;
   background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
   border: 0;
-  border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  border-radius: 12px;
+  box-shadow: rgba(151, 65, 252, 0.3) 0 10px 20px -5px;
   box-sizing: border-box;
   color: #FFFFFF;
   display: flex;
-  font-family: Phantomsans, sans-serif;
-  font-size: calc(1em + 1.5vw); /* Dynamic font size */
+  font-family: 'Inter', sans-serif;
   justify-content: center;
   line-height: 1em;
-  min-width: 140px;
-  padding: 5px;
+  max-width: 280px;
+  width: 100%;
+  padding: 3px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
+  margin: 30px auto 0;
+  transition: all 0.3s ease;
 }
 
-.button-64 .text, .button-69 .text {
-  padding-left: 10px;
-}
-
-.button-64:active,
 .button-64:hover,
-.button-69:active,
 .button-69:hover {
-  outline: 0;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: rgba(151, 65, 252, 0.4) 0 15px 30px -5px;
 }
 
 .button-64 span,
 .button-69 span {
   background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
-  border-radius: 6px;
+  padding: 12px 24px;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   transition: 300ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.button-64 span i,
+.button-69 span i {
+  font-size: 1.2rem;
 }
 
 .button-64:hover span,
@@ -120,26 +281,98 @@
 }
 
 @media (min-width: 768px) {
-  .button-64, .button-69 {
-    font-size: 1.2rem; /* Larger size on bigger screens */
+
+  .button-64,
+  .button-69 {
+    font-size: 1.2rem;
+    /* Larger size on bigger screens */
     min-width: 196px;
   }
 }
- .navbar{
-  background-color: rgba(10,0,0,0.3) !important;
- }
-.navbar-brand b{
-  font-family: 'Galada', cursive; /* Replace this with 'Galadiola' if available */
-  font-size: calc(1.2em + 10px); /* Dynamic font sizing */
+
+.feature-box {
+  background: rgba(13, 12, 41, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  padding: 40px 30px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feature-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: 0.5s;
+}
+
+.feature-box:hover::after {
+  left: 100%;
+}
+
+.feature-box:hover {
+  transform: translateY(-15px) rotateX(5deg);
+  background: rgba(13, 12, 41, 0.6);
+  border-color: rgba(175, 64, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(175, 64, 255, 0.2), 0 0 20px rgba(175, 64, 255, 0.1);
+}
+
+.feature-box h3 {
+  background: linear-gradient(135deg, #FF69B4, #AF40FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.feature-box p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.navbar {
+  background: transparent !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: none !important;
+  padding: 15px 0 !important;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(9, 8, 32, 0.8) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.navbar-brand b {
+  font-family: 'Galada', cursive;
+  /* Replace this with 'Galadiola' if available */
+  font-size: calc(1.2em + 10px);
+  /* Dynamic font sizing */
   color: #ff99ff;
-  text-shadow: 
+  text-shadow:
     /* Inner Glow */
-    0 0 15px #0c63d4, 
-    0 0 10px #1362da, 
+    0 0 15px #0c63d4,
+    0 0 10px #1362da,
     /* Outer Glow - Border Effect */
-    0 0 15px #ff33cc, 
-    0 0 10px #ff33cc, 
-    0 0 15px #ff1aff, 
-    0 0 10px #ff1aff, 
+    0 0 15px #ff33cc,
+    0 0 10px #ff33cc,
+    0 0 15px #ff1aff,
+    0 0 10px #ff1aff,
     0 0 10px #ff1aff;
 }

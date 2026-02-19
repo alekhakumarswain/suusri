@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <link rel="sitemap" type="application/xml" href="https://suusri.web.app/sitemap.xml" />
     <link rel="canonical" href="https://suusri.web.app" />
+    <meta name="google-site-verification" content="6Ze3TBTjgyH9tvGokV9tjL-igBNDDpeMxNPKeHkzXMM" />
     
     <!-- SEO Meta Tags -->
 
@@ -91,83 +92,12 @@
       🎉 Security? No worries! SuuSri guards your data like a highly caffeinated bodyguard! 🔒💪
       🎮 If this app isn't as fast as you'd like... SuuSri blames it on the Wi-Fi. 🤷‍♀️
     -->
-    <!-- Install Button -->
-    <button id="install-button" style="display: none; position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
-      Install SuuSri
-    </button>
-
     <script>
-      const styles = [
-        'color: white',
-        'background-color: #007bff',
-        'padding: 4px 8px',
-        'border-radius: 4px',
-        'font-size: 14px',
-        'font-weight: bold',
-      ].join(';');
-    
-      console.log("%cHello, I'm SUUSRI Welcome to my World! 👋", styles);
-      console.log('%cSuuSri is smarter than you think! 🤖', 'color: #ff4500; font-size: 12px;');
-      console.log('%c💡 Fun Tip:', 'color: #ffa500; font-size: 12px;', 'Have you tried building your own assistant yet?');
-      console.log('%c🐰 Easter eggs? Maybe. 🕵️‍♂️', 'color: #6a5acd; font-style: italic;');
-      console.log('%c🚀 Powered by love, but mostly by code. 💻','color: #ff0000; font-size: 12px; font-weight: bold;');
-      console.log('%c🎮 If this app isn\'t as fast as you\'d like... SuuSri blames it on the Wi-Fi. 🤷‍♀️', 'color: #ff4500; font-size: 12px;');
-
-
       // Right-click custom behavior
       document.addEventListener('contextmenu', function(e) {
-        e.preventDefault(); // Prevent the default right-click behavior
-        alert('Oops! No right-clicking allowed here. 🕵️‍♂️✨'); // Custom alert
-        console.log('%cHey! Right-click is disabled here. 👀', 'color: red; font-size: 14px; font-weight: bold;');
+        e.preventDefault();
+        alert('Oops! No right-clicking allowed here. 🕵️‍♂️✨');
       });
-
-      // Console Log to debug or log funny comments
-      console.log('%c🚨 WARNING: Debugging is addictive. Proceed with caution!', 'color: blue; font-size: 14px; font-weight: bold;');
-      
-      
-      // Auto-refresh when no changes detected (because the universe might have to reload it! 🔄)
-      setInterval(() => {
-        console.log('%c🚀 Still running, no need to panic, SuuSri is invincible! 🦾', 'color: purple; font-size: 14px; font-weight: bold;');
-      }, 500000); // Check every 5 seconds
-
-      const originalWarn = console.warn;
-console.warn = function (...args) {
-  if (args[0] && args[0].includes("Banner not shown")) {
-    return;  // Ignore the warning related to 'beforeinstallprompt'
-  }
-  originalWarn.apply(console, args);  // For other warnings, use the default behavior
-};
-
-      document.addEventListener("DOMContentLoaded", () => {
-  let deferredPrompt;
-  const installButton = document.getElementById("install-button");
-
-  window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault();  // Suppress the banner
-    deferredPrompt = event;  // Store the event to trigger it manually later
-
-    // Show the install button
-    installButton.style.display = "block";
-
-    // On button click, show the install prompt
-    installButton.addEventListener("click", () => {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();  // This triggers the PWA install prompt
-        
-        deferredPrompt.userChoice.finally(() => {
-          deferredPrompt = null;  // Reset deferredPrompt
-          installButton.style.display = "none";  // Hide the install button
-        });
-      }
-    });
-  });
-
-  // Handle successful installation
-  window.addEventListener("appinstalled", () => {
-    alert("SuuSri has been successfully installed! 🎉");
-  });
-});
-
 
       // Register the Service Worker
       if ("serviceWorker" in navigator) {

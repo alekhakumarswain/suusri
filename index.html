@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/suu-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="sitemap" type="application/xml" href="https://suusri.web.app/sitemap.xml" />
+  <link rel="canonical" href="https://suusri.web.app" />
+  <meta name="google-site-verification" content="6Ze3TBTjgyH9tvGokV9tjL-igBNDDpeMxNPKeHkzXMM" />
+
+  <!-- SEO Meta Tags -->
+
+  <meta name="description"
+    content="SuuSri: Your AI Assistant, smarter than your autocorrect. Multi-lingual, offline-ready, and built to help you!" />
+  <meta name="subject" content="AI Assistant" />
+  <meta name="url" content="https://suusri.web.app" />
+  <meta name="identifier-URL" content="https://suusri.web.app" />
+  <meta name="category" content="AI Assistant" />
+  <meta name="site_name" content="SuuSri" />
+  <meta name="rating" content="safe for kids" />
+  <meta name="keywords"
+    content="AI Assistant, React, PWA, Multi-language, Firebase, Smart Assistant, Digital Help, SuuSri" />
+  <meta name="author" content="SuuSri Team" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="apple-mobile-web-app-title" content="SuuSri" />
+  <meta name="application-name" content="SuuSri" />
+  <meta name="msapplication-TileColor" content="#000000" />
+  <meta name="msapplication-TileImage" content="/suu-icon.png" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- PWA related meta -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" href="/suu-icon.png" />
+  <link rel="apple-touch-startup-image" href="/suu-icon.png" />
+
+  <!-- Social Sharing (OG) Tags -->
+  <meta property="og:title" content="SuuSri | Your Smart Assistant" />
+  <meta property="og:description" content="Chat, learn, and laugh with SuuSri – your trusted AI assistant." />
+  <meta property="og:image" content="/suu-icon.png" />
+  <meta property="og:url" content="https://suusri.web.app" />
+  <meta property="og:site_name" content="SuuSri" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="hi_IN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SuuSri | Your Smart Assistant" />
+  <meta name="twitter:description" content="Chat, learn, and laugh with SuuSri – your trusted AI assistant." />
+  <meta name="twitter:image" content="/suu-icon.png" />
+  <meta name="twitter:creator" content="@suusri" />
+  <meta name="twitter:site" content="@suusri" />
+  <meta name="twitter:domain" content="suusri.web.app" />
+
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/suu-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/suu-icon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/suu-icon.png" />
+  <link rel="mask-icon" href="/suu-icon.png" color="#5bbad5" />
+  <link rel="shortcut icon" href="/suu-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="SuuSri" />
+  <meta name="application-name" content="SuuSri" />
+  <meta name="msapplication-TileColor" content="#000000" />
+  <meta name="msapplication-TileImage" content="/suu-icon.png" />
+
+  <title>SuuSri - Your AI Assistant</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/index.jsx"></script>
+  <!-- Install Button - Only shows on home page -->
+  <button id="install-button"
+    style="display: none; position: fixed; bottom: 20px; right: 20px; padding: 12px 24px; background: linear-gradient(135deg, #AF40FF, #5B42F3); color: white; border: none; border-radius: 50px; cursor: pointer; font-size: 16px; font-weight: 600; box-shadow: 0 8px 20px rgba(175, 64, 255, 0.4); transition: all 0.3s ease; z-index: 9999;">
+    Install SuuSri
+  </button>
+
+  <script>
+    const styles = [
+      'color: white',
+      'background-color: #007bff',
+      'padding: 4px 8px',
+      'border-radius: 4px',
+      'font-size: 14px',
+      'font-weight: bold',
+    ].join(';');
+
+    console.log("%cHello, I'm SUUSRI Welcome to my World! 👋", styles);
+    console.log('%cSuuSri is smarter than you think! 🤖', 'color: #ff4500; font-size: 12px;');
+    console.log('%c💡 Fun Tip:', 'color: #ffa500; font-size: 12px;', 'Have you tried building your own assistant yet?');
+    console.log('%c🐰 Easter eggs? Maybe. 🕵️‍♂️', 'color: #6a5acd; font-style: italic;');
+    console.log('%c🚀 Powered by love, but mostly by code. 💻', 'color: #ff0000; font-size: 12px; font-weight: bold;');
+    console.log('%c🎮 If this app isn\'t as fast as you\'d like... SuuSri blames it on the Wi-Fi. 🤷‍♀️', 'color: #ff4500; font-size: 12px;');
+
+    // Right-click custom behavior
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+      alert('Oops! No right-clicking allowed here. 🕵️‍♂️✨');
+    });
+
+    console.log('%c🚨 WARNING: Debugging is addictive. Proceed with caution!', 'color: blue; font-size: 14px; font-weight: bold;');
+
+    setInterval(() => {
+      console.log('%c🚀 Still running, no need to panic, SuuSri is invincible! 🦾', 'color: purple; font-size: 14px; font-weight: bold;');
+    }, 500000);
+
+    const originalWarn = console.warn;
+    console.warn = function (...args) {
+      if (args[0] && args[0].includes("Banner not shown")) {
+        return;
+      }
+      originalWarn.apply(console, args);
+    };
+
+    // Function to check if we're on the chat page
+    function isOnChatPage() {
+      return window.location.pathname.includes('/chat') || window.location.hash.includes('/chat');
+    }
+
+    // Function to update install button visibility
+    function updateInstallButtonVisibility() {
+      const installButton = document.getElementById("install-button");
+      if (installButton && isOnChatPage()) {
+        installButton.style.display = "none";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      let deferredPrompt;
+      const installButton = document.getElementById("install-button");
+
+      // Add hover effect
+      if (installButton) {
+        installButton.addEventListener('mouseenter', () => {
+          installButton.style.transform = 'scale(1.05)';
+          installButton.style.boxShadow = '0 12px 30px rgba(175, 64, 255, 0.6)';
+        });
+        installButton.addEventListener('mouseleave', () => {
+          installButton.style.transform = 'scale(1)';
+          installButton.style.boxShadow = '0 8px 20px rgba(175, 64, 255, 0.4)';
+        });
+      }
+
+      window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        deferredPrompt = event;
+
+        // Only show install button if NOT on chat page
+        if (!isOnChatPage()) {
+          installButton.style.display = "block";
+        }
+
+        installButton.addEventListener("click", () => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+
+            deferredPrompt.userChoice.finally(() => {
+              deferredPrompt = null;
+              installButton.style.display = "none";
+            });
+          }
+        });
+      });
+
+      window.addEventListener("appinstalled", () => {
+        alert("SuuSri has been successfully installed! 🎉");
+      });
+
+      // Listen for route changes (for SPAs)
+      window.addEventListener('hashchange', updateInstallButtonVisibility);
+      window.addEventListener('popstate', updateInstallButtonVisibility);
+
+      // Initial check
+      updateInstallButtonVisibility();
+    });
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js");
+      });
+    }
+  </script>
+</body>
+
+</html>
