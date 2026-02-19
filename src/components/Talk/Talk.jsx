@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
 import './Talk.css';
 
+import { useAuth } from '../../lib/AuthContext';
+
 const Talk = () => {
+    const { user, loading } = useAuth();
     const [isListening, setIsListening] = useState(false);
     const [messages, setMessages] = useState([
         {
@@ -24,6 +27,13 @@ const Talk = () => {
     const activeSourcesRef = useRef([]);
     const nextStartTimeRef = useRef(0);
     const [isCallActive, setIsCallActive] = useState(false);
+
+    // Authentication check
+    useEffect(() => {
+        if (!loading && !user) {
+            navigate('/');
+        }
+    }, [user, loading, navigate]);
 
       const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
         ? 'http://127.0.0.1:5000'
@@ -169,7 +179,10 @@ const Talk = () => {
             }]);
 
             // Send to server
-            socket.emit('send_text', { text: textInput });
+            socket.emit('send_text', { 
+                text: textInput,
+                email: user?.email // Added for credit check
+            });
             setTextInput('');
 
             // Add a temporary "thinking" indicator
@@ -322,9 +335,22 @@ const Talk = () => {
 
     const handleStartCall = () => {
         if (socket && isConnected) {
-            socket.emit('start_voice_session', {});
+            // Get local time info for accurate greeting
+            const now = new Date();
+            const clientTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+            const clientHour = now.getHours();
+
+            socket.emit('start_voice_session', { 
+                client_time: clientTime,
+                client_hour: clientHour,
+                email: user?.email, // Added for credit check
+                user_name: user?.name // Added for personalized greeting
+            });
+            
             setIsCallActive(true);
-            // Auto start recording when call starts for a smooth experience
+            setMessages([]); // Clear the placeholder message to make room for AI greeting
+            
+            // Auto start recording
             startRecording();
         } else {
             setError("Still connecting to server... Please wait.");

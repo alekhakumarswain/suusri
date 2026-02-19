@@ -8,11 +8,36 @@ import icon2 from '../Assets/img/suu3.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useNavigate } from 'react-router-dom';
 
+import { useAuth } from '../lib/AuthContext';
+
 const Main = () => {
   const navigate = useNavigate();
+  const { user, loginWithGoogle } = useAuth();
 
-  const handleChatNowClick = () => {
-    navigate('/chat');
+  const handleChatNowClick = async () => {
+    if (user) {
+      navigate('/chat');
+    } else {
+      try {
+        await loginWithGoogle();
+        navigate('/chat');
+      } catch (err) {
+        console.error("Login Error:", err);
+      }
+    }
+  };
+
+  const handleTalkNowClick = async () => {
+    if (user) {
+      navigate('/talk');
+    } else {
+      try {
+        await loginWithGoogle();
+        navigate('/talk');
+      } catch (err) {
+        console.error("Login Error:", err);
+      }
+    }
   };
 
   const fadeInUp = {
@@ -83,7 +108,7 @@ const Main = () => {
                   <b>Intelligence</b>
                 </h1>
                 <p className="content-text">SuuSri is designed to provide support, answer queries, and enhance your digital experience with intuitive processing.</p>
-                <button className="button-69" role="button" onClick={() => navigate('/talk')}>
+                <button className="button-69" role="button" onClick={handleTalkNowClick}>
                   <span className="text">
                     <i className="fas fa-microphone"></i>
                     <b>TALK NOW</b>

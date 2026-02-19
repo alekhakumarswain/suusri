@@ -30,7 +30,10 @@ const TypewriterEffect = ({ text, speed = 10, onComplete }) => {
   );
 };
 
+import { useAuth } from '../../lib/AuthContext';
+
 const Chat = () => {
+  const { user, loading } = useAuth();
   const [userInput, setUserInput] = useState('');
   const [messages, setMessages] = useState([]);
   const [conversationHistory, setConversationHistory] = useState([]);
@@ -40,13 +43,24 @@ const Chat = () => {
   const chatEndRef = useRef(null);
   const navigate = useNavigate();
 
+  // Authentication check
+  useEffect(() => {
+    if (!loading && !user) {
+      navigate('/');
+    }
+  }, [user, loading, navigate]);
+
   // Initialize session
   useEffect(() => {
-    // Generates a fresh session ID every refresh
-    const freshSessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    setSessionId(freshSessionId);
-    setMessages([{ text: "Hii! 👋 Mu tumara Suusri. Kan naama tumara?  😊", sender: 'ai', isTyped: true }]);
-  }, []);
+    if (user) {
+      setUserName(user.name);
+      // Generates a fresh session ID every refresh
+      const freshSessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      setSessionId(freshSessionId);
+      const greeting = `Hii ${user.name.split(' ')[0]}! 👋 Mu tumara Suusri. Ki sahajya kari paribi? 😊`;
+      setMessages([{ text: greeting, sender: 'ai', isTyped: true }]);
+    }
+  }, [user]);
 
   // Scroll to bottom
   useEffect(() => {
@@ -77,6 +91,7 @@ const Chat = () => {
           history: conversationHistory,
           session_id: sessionId,
           user_name: userName, // Send known name
+          email: user?.email, // Added for credit check
         }),
       });
 
@@ -96,7 +111,7 @@ const Chat = () => {
     } catch (error) {
       setMessages((prev) => [
         ...prev,
-        { text: "Oops! Backend se connection toot gaya... 😅", sender: "ai", isTyped: true }
+        { text: error.message || "Oops! Backend se connection toot gaya... 😅", sender: "ai", isTyped: true }
       ]);
       console.error("API Error:", error);
     } finally {

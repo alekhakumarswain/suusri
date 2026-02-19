@@ -5,22 +5,27 @@ import Chat from './components/Main/Chat';
 import Welcome from './components/Welcome';
 import SuuSri from './components/Main/suusri';
 import Talk from './components/Talk/Talk';
+import Profile from './components/Profile/Profile';
 
+import { AuthProvider } from './lib/AuthContext';
 import './App.css';
 
 const App = () => {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/main" element={<Main />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/talk" element={<Talk />} />
-          <Route path='/suusri' element={<SuuSri />} />
-        </Routes>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/main" element={<Main />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/talk" element={<Talk />} />
+            <Route path='/suusri' element={<SuuSri />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 };
 
